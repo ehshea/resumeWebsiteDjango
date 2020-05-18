@@ -1,0 +1,39 @@
+body{
+    background-image:url("../img/dimension.png");
+    font-family: 'Open Sans', sans-serif;
+}
+
+.jumbotron{
+    color: #FF0000;/*red*/
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    background: none;
+}
+
+a {
+    color: #000000;
+}
+
+.nav li{
+    margin-right: 20px;
+}
+
+.no-border{
+    border: none;
+}
+.link-row {
+    display: table;
+}
+
+footer{
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+    padding:0;
+    border:0;
+    width: 80%;
+    height:1%;
+    font-size:75%;
+    text-align: center;
+}

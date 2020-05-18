@@ -1,0 +1,32 @@
+{% extends 'eshea_home.html' %}
+{% load cms_tags menu_tags sekizai_tags static %}
+{% block content %}
+<div class=".row">
+    <div class="col"/>
+        {% include "linkedin_badge.html" %}
+    </div>
+    <div class="col"/>
+        <div class=".row">
+            <div class="col"/>
+            <img class="img-fluid" src="{% static 'img/' %}">
+            </div>
+        </div>
+        <div class=".row">
+            <div class="col"/>
+            <img class="img-fluid" src="{% static 'img/' %}">
+            </div>
+        </div>
+        <div class=".row">
+            <div class="col"/>
+            <img class="img-fluid" src="{% static 'img/' %}">
+            </div>
+        </div>
+        <div class=".row">
+            <div class="col"/>
+            <img class="img-fluid" src="{% static 'img/' %}">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+

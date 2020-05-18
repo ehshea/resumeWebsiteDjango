@@ -1,0 +1,15 @@
+{% extends 'eshea_home.html' %}
+{% load cms_tags menu_tags sekizai_tags static %}
+{% block content %}
+<div id="contentPanel" class="card">
+    <div id=diePanel class="container">
+        <canvas id=dieCanvas></canvas>
+    </div>
+    <div class="card-body">
+        <div id="btnHolder" class="container">
+            <button id="rollBtn" type="button">Roll</button>
+            <div>
+            </div>
+        </div>
+        <script type=text/javascript src={% static "js/dice.js" %} />
+        {% endblock content %}
