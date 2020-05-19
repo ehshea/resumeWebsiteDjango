@@ -1,55 +1,49 @@
 {% load cms_tags menu_tags sekizai_tags static %}
 <!DOCTYPE html>
 <html>
+
 <head>
-    <!-- BS4 Required meta tags -->
+    <!-- Bootstrap Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Icon -->
     <link rel="icon" type="image/png" href="{% static 'img/RootTerminal.png' %}">
     <!-- Web Font -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Kaushan+Script|Pacifico' rel='stylesheet'
-          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Kaushan+Script|Pacifico' rel='stylesheet' type='text/css'>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    {% block style %}{% endblock style %}
     {% block title %}<title>{% page_attribute "page_title" %}</title>{% endblock title %}
     {% render_block "css" %}
 </head>
+
 <body>
-<!-- django CMS Toolbar -->
-{% cms_toolbar %}
-<div class="jumbotron">
-    {% placeholder "heading" %}
-</div>
-<div class="container">
-    <ul class="nav justify-content-center">
-        {% show_menu 0 100 100 100 %}
-    </ul>
-</div>
-<div class="card mx-auto my-3 p-3 w-75">
-    <div class="card-body no-border justify-content-around" id="content-card">
-        {% block content %}
-            {% placeholder "content" or %}There is no content.{% endplaceholder %}
-        {% endblock content %}
+    <!-- django CMS Toolbar -->
+    {% cms_toolbar %}
+    <div class="jumbotron">
+        {% placeholder "heading" %}
     </div>
-</div>
-{% static_placeholder "footer" or %}<footer>&copy eshea.net</footer>{% endstatic_placeholder %}
-<!-- BS4 Required JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
-<!-- LinkedIn -->
-<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-{% render_block "js" %}
+    <div class="container">
+        <ul class="nav justify-content-center">
+            {% show_menu 0 100 100 100 %}
+        </ul>
+    </div>
+    <div class="card mx-auto my-3 p-3 w-75 justify-content-center align-items-center">
+        <div class="card-body no-border justify-content-center align-items-center text-center" id="content-card">
+            {% block content %}
+            {% placeholder "content" or %}There is no content.{% endplaceholder %}
+            {% endblock content %}
+        </div>
+    </div>
+    {% static_placeholder "footer" or %}<footer>&copy eshea.net</footer>{% endstatic_placeholder %}
+    <!-- BS4 Required JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- LinkedIn -->
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    {% render_block "js" %}
 </body>
+
 </html>

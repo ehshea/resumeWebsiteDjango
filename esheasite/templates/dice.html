@@ -1,15 +1,28 @@
 {% extends 'eshea_home.html' %}
 {% load cms_tags menu_tags sekizai_tags static %}
 {% block content %}
-<div id="contentPanel" class="card">
-    <div id=diePanel class="container">
-        <canvas id=dieCanvas></canvas>
-    </div>
-    <div class="card-body">
-        <div id="btnHolder" class="container">
-            <button id="rollBtn" type="button">Roll</button>
-            <div>
+{% addtoblock 'css' %}
+<link rel="stylesheet" href="{% static 'css/dice.css' %}">
+{% endaddtoblock %}
+{% addtoblock "js" %}
+<script src="{% static 'js/sixSidedDie.js' %}"></script>
+{% endaddtoblock %}
+<div class="row justify-content-center align-items-center">
+    <div class="col justify-content-center align-items-center">
+        <div id="dieCard" class="card no-border">
+            <div class="card-header bg-white no-border">
+                <h1 id="dieName"></h1>
+            </div>
+            <div class="card-body rounded bg-white justify-content-center align-items-center">
+                <div id=" die" class="embed-responsive embed-responsive-1by1 rounded justify-content-center align-items-center border border-default">
+                    <canvas id=dieCanvas class="embed-responsive-item rounded border-dark"></canvas>
+                </div>
+            </div>
+            <div class="card-footer bg-white no-border">
+                <div id="btnHolder" class="container">
+                    <button id="rollBtn" type="button" onclick="rollSixSidedDie()">Roll</button>
+                </div>
             </div>
         </div>
-        <script type=text/javascript src={% static "js/dice.js" %} />
-        {% endblock content %}
+    </div>
+    {% endblock content %}
