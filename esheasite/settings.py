@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECRET_KEY = '4jc0taa065zcml1mc*78@wy0w0qp4b*(50l4og$j!s)62g_w@6'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '4jc0taa065zcml1mc*78@wy0w0qp4b*(50l4og$j!s)62g_w@6')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+DEBUG = 'False'
 
 ALLOWED_HOSTS = ['ehshea.net', '127.0.0.1']
 
